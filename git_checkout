@@ -1,0 +1,2 @@
+#!/bin/bash
+git checkout $(find -name "$1" -type f)

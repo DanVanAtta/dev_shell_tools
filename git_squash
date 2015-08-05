@@ -1,0 +1,16 @@
+#!/bin/bash
+
+function usage() {
+  echo "$(basename $0) <commits_to_squash>"
+  echo "  commits_to_squash = how many prior commits in local history to squash"
+  exit -1
+}
+
+HOW_MANY_COMMITS=$1
+if [ -z "$HOW_MANY_COMMITS" ]; then
+  usage
+fi
+
+git reset --soft HEAD~${HOW_MANY_COMMITS} && 
+git commit --edit -m"$(git log --format=%B --reverse HEAD..HEAD@{1})"
+
