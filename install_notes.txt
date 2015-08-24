@@ -6,18 +6,12 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:thefanclub/ubuntu-after-install
-sudo add-apt-repository ppa:duh/golang
 
 sudo apt-get update
 
-sudo apt-get install git sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
+sudo apt-get install git meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
 sudo apt-get install cairo-dock cairo-dock-plug-ins ubuntu-after-install
-
-
-sudo apt-get install python-software-properties
-sudo apt-get install golang
-
 
 
 sudo apt-get remove overlay-scrollbar   ##<< more to do
@@ -44,3 +38,13 @@ echo System settings > appearance -> enable workspaces
 
 echo select no for dash, default shell will be bash and not dash
 sudo dpkg-reconfigure dash  
+
+
+echo "Run git config:"
+echo git config --global user.email email
+echo git config --global user.name name
+git config --global core.editor vi
+git config --global merge.tool meld
+git config --global core.autocrlf input
+git config branch.autosetuprebase always --global
+git config --global push.default simple
