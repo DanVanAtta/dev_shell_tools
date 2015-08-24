@@ -1,0 +1,3 @@
+#!/bin/bash
+find . -name "*.orig" -type f | xargs --no-run-if-empty rm 
+find . -type f | egrep "java\.(BACKUP|BASE|LOCAL|REMOTE)\.[0-9]*.java$" | xargs --no-run-if-empty rm
