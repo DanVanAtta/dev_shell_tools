@@ -1,0 +1,40 @@
+
+sudo apt-get upgrade
+
+wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+
+sudo add-apt-repository ppa:webupd8team/sublime-text-3
+sudo add-apt-repository ppa:thefanclub/ubuntu-after-install
+
+sudo apt-get update
+
+sudo apt-get install git sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
+sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller
+sudo apt-get install cairo-dock cairo-dock-plug-ins ubuntu-after-install
+
+
+sudo apt-get remove overlay-scrollbar   ##<< more to do
+
+
+echo remove apparmor
+service apparmor stop 
+update-rc.d -f apparmor remove 
+sudo apt-get remove apparmor apparmor-utils
+
+
+sudo sensors-detect --auto
+
+
+echo "show hidden start up application in startup applications app, remove unnecessary ones there"
+sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
+
+
+
+echo "run ubuntu-after-install, install flux, copy .bashrc and .vimrc to your home folder"
+echo turn on privacy
+echo  To do this, go to System Settings -> Security & Privacy :  disable record app results and the unity online search
+echo System settings > appearance -> enable workspaces
+
+echo select no for dash, default shell will be bash and not dash
+sudo dpkg-reconfigure dash  
