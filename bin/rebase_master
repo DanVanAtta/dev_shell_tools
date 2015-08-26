@@ -6,6 +6,4 @@ if [ -z "$BRANCH" ]; then
  echo "    Script then pushes the updated branch to origin"
  exit -1
 fi
-git checkout $1
-git pull --rebase . master
-git push origin $1
+git checkout $1 &&  git pull --rebase . master && git push -f origin $1
