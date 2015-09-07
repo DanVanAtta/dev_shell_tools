@@ -10,11 +10,12 @@ esac
 
 export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
 export PATH=$PATH:/home/dan/bin
+export PATH=$PATH:/home/dan/bin/linux_tools_bin
 export PATH=$PATH:/home/dan/bin/hub
 alias gb='git branch'
 alias gc='git checkout'
 alias gd='git diff'
-alias gl='git log'
+alias gl='git log --stat'
 alias gr='git reset'
 alias gs='git status -sb'
 alias gss='git status'
