@@ -48,3 +48,11 @@ git config --global merge.tool meld
 git config --global core.autocrlf input
 git config branch.autosetuprebase always --global
 git config --global push.default simple
+
+
+
+Install some cool fonts for source code "Hack":
+
+wget https://github.com/chrissimpkins/Hack/releases/download/v2.013/Hack-v2_013-ttf.zip
+unzip Hack.*zip
+sudo gnome-font-viewer *.ttf
