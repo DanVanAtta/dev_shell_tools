@@ -12,6 +12,8 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
 export PATH=$PATH:/home/dan/bin
 export PATH=$PATH:/home/dan/bin/linux_tools_bin
 export PATH=$PATH:/home/dan/bin/hub
+  # sudo apt-get install libimage-exiftool-perl
+alias bitrate='exiftool -AudioBitrate'
 alias gb='git branch'
 alias gc='git checkout'
 alias gd='git diff'
@@ -19,6 +21,7 @@ alias gl='git log --stat'
 alias gr='git reset'
 alias gs='git status -sb'
 alias gss='git status'
+alias gm='git checkout master'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
