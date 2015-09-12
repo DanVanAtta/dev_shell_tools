@@ -39,3 +39,16 @@ Install some cool fonts for source code "Hack":
 wget https://github.com/chrissimpkins/Hack/releases/download/v2.013/Hack-v2_013-ttf.zip
 unzip Hack.*zip
 sudo gnome-font-viewer *.ttf
+
+## Install Tig (git history viewer)
+
+sudo apt-get install libncurses-dev -y
+wget http://jonas.nitro.dk/tig/releases/tig-2.1.tar.gz
+tar -xvf tig*gz
+rm tig*gz
+mkdir -p ~/apps
+mv tig* ~/apps/
+cd ~/apps/tig*
+./configure   ## will check you have dependencies set up
+make
+make install
