@@ -52,3 +52,9 @@ cd ~/apps/tig*
 ./configure   ## will check you have dependencies set up
 make
 make install
+
+
+## harden the kernel a bit
+# Set: kernel.kptr_restrict = 2 in /etc/sysctl.d/10-kernel-hardening.conf
+
+ 
