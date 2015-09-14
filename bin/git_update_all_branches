@@ -1,0 +1,21 @@
+#!/bin/bash
+  
+ ## 'set -e' will have the script fail and halt on error rather than continue
+set -e
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+TOTAL=$(git branch | grep -c "$")
+CURRENT=0
+for i in $(git branch | sed 's/^..//g'); do
+  CURRENT=$((CURRENT+1))
+  
+  PROGRESS_STRING="$CURRENT of $TOTAL"
+  echo -e "\n${bold}Updating branch: ${i} (${PROGRESS_STRING})${normal}"
+  git checkout $i 
+  
+  git pull --rebase . master
+  PUSH="git push origin -f $i"
+  git status | tail -1 | grep -q "working directory clean" && $PUSH
+done
