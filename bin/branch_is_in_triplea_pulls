@@ -1,0 +1,18 @@
+#!/bin/bash
+
+curl -i https://api.github.com/repos/triplea-game/triplea/pulls 2> /dev/null | grep \"ref\" | sed 's/.*: "//g' | sed 's/",$//g' | grep -v "master" > /tmp/pr_branches
+
+
+
+CUR_BRANCH=$(git branch | grep "^\*" | sed 's/^..//')
+
+RESULT="no"
+
+grep -q $CUR_BRANCH /tmp/pr_branches && RESULT="yes"
+
+bold=$(tput bold)
+normal=$(tput sgr0)
+
+echo "$CUR_BRANCH -- has PR?  => ${bold}$RESULT${normal}"
+
+rm /tmp/pr_branches
