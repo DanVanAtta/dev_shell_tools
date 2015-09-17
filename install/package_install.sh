@@ -14,5 +14,6 @@ sudo apt-get install git meld sublime-text-installer google-chrome-stable ntp nt
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
 sudo apt-get install cairo-dock cairo-dock-plug-ins ubuntu-after-install -y
 
+sudo apt-get install compizconfig-settings-manager -y
 
-sudo apt-get remove apparmor apparmor-utils
+sudo apt-get remove apparmor apparmor-utils -y
