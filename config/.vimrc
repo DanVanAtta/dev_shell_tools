@@ -1,3 +1,5 @@
+color desert
+
 set nocompatible
 set so=7
 "Always show current position
@@ -51,7 +53,6 @@ set encoding=utf8
 set ffs=unix,dos,mac
 
 
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Moving around, tabs, windows and buffers
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -103,8 +104,6 @@ set viminfo^=%
 " Always show the status line
 set laststatus=2
 
-" Format the status line
-set statusline=\ %{HasPaste()}%F%m%r%h\ %w\ \ CWD:\ %r%{getcwd()}%h\ \ \ Line:\ %l
 
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
