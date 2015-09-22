@@ -1,0 +1,10 @@
+#!/bin/bash
+
+TMP_RESULTS=/tmp/files_$(data +%s)
+ls | grep " " > $TMP_RESULTS
+
+while read line; do 
+  mv $line $(echo $line | tr ' ' '_'); 
+
+done < $TMP_RESULT; 
+rm $TMP_RESULTS
