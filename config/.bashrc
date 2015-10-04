@@ -22,6 +22,8 @@ alias gr='git reset'
 alias gs='git status -sb'
 alias gss='git status'
 alias gm='git checkout master'
+alias gupdate='git fetch upstream && git pull --rebase upstream master'
+alias gpm='git push origin master'
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
