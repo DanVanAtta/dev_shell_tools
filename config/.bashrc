@@ -12,6 +12,25 @@ export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
 export PATH=$PATH:/home/dan/bin
 export PATH=$PATH:/home/dan/bin/linux_tools_bin
 export PATH=$PATH:/home/dan/bin/hub
+export PATH=$PATH:/home/dan/apps/node-v4.1.1-linux-x64/bin
+
+ ## some common typos
+alias sl='ls'
+alias LS='ls'
+alias PWD='pwd'
+alias CD='cd'
+
+alias .1="cd ../"
+alias .2="cd ../../"
+alias .3="cd ../../../"
+alias .4="cd ../../../../"
+alias .5="cd ../../../../../"
+alias .6="cd ../../../../../../"
+alias .7="cd ../../../../../../../"
+alias .8="cd ../../../../../../../../"
+alias .9="cd ../../../../../../../../../"
+
+
   # sudo apt-get install libimage-exiftool-perl
 alias bitrate='exiftool -AudioBitrate'
 alias gb='git branch'
