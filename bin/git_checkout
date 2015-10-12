@@ -10,7 +10,7 @@ function usage() {
  
 FILE_TO_CHECKOUT=$1
 
-if [ -z "$FILE_TO_CHECKOUT"]; then
+if [ -z "$FILE_TO_CHECKOUT" ]; then
   usage
 fi
 
