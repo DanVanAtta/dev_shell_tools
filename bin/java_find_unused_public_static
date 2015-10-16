@@ -9,7 +9,7 @@ function printFileStats() {
   for methodName in $(grep "public .*(.*{$" "$filePath" | grep -v "=" | sed 's|(.*||' | sed 's|.* ||'); do
     if [ ! -z "$methodName" ]; then
     local usageCount="$(find . -name "*java" -not -name "$fileName" | xargs grep "$methodName(" | wc -l)"
-    echo -en "$usageCount -- $filePath -- $methodName\n"
+  #  echo -en "$usageCount -- $filePath -- $methodName\n"
     if [ "$usageCount" == 0 ]; then
        echo "Found no usages in $filePath of $methodName"
        sed -i "s/public \(.*\) $methodName(/private \1 $methodName(/" $filePath
