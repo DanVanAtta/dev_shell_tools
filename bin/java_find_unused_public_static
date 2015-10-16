@@ -1,0 +1,23 @@
+#!/bin/bash
+
+
+
+function printFileStats() {
+  local filePath=$1
+  local fileName="$(echo $filePath | sed 's|.*/||')"
+  
+  for methodName in $(grep "public static .*(" "$filePath" | sed 's|(.*||' | sed 's|.* ||'); do
+    local methodSig=$(grep -m1 "public static .* $methodName(" $filePath | sed 's/^ *//g' )
+    
+    local usageCount="$(find . -name "*java"  | xargs grep "$methodName(" | wc -l)"
+    echo -n "$usageCount -- $fileName -- $methodSig"
+    echo 
+  done;
+}
+
+export -f printFileStats
+
+
+find . -name "*java" -type f | xargs -i egrep -l "public static.*\(" {} | parallel printFileStats {}
+ 
+
