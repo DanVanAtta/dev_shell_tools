@@ -6,13 +6,14 @@ function printFileStats() {
   local filePath=$1
   local fileName="$(echo $filePath | sed 's|.*/||')"
   
-  for methodName in $(grep "public .*(" "$filePath" | grep -v "=" | sed 's|(.*||' | sed 's|.* ||'); do
-   local methodSig=$(grep -m1 "public .* $methodName(" $filePath | sed 's/^ *//g' )
-   local usageCount="$(find . -name "*java" -not -name "$fileName" | xargs grep "$methodName(" | wc -l)"
-    #echo -n "$usageCount -- $filePath -- $methodSig"
+  for methodName in $(grep "public .*(.*{$" "$filePath" | grep -v "=" | sed 's|(.*||' | sed 's|.* ||'); do
+    if [ ! -z "$methodName" ]; then
+    local usageCount="$(find . -name "*java" -not -name "$fileName" | xargs grep "$methodName(" | wc -l)"
+    echo -en "$usageCount -- $filePath -- $methodName\n"
     if [ "$usageCount" == 0 ]; then
-       echo "Found no usages in $filePath of $methodSig"
+       echo "Found no usages in $filePath of $methodName"
        sed -i "s/public \(.*\) $methodName(/private \1 $methodName(/" $filePath
+    fi
     fi
   done;
 }
@@ -20,6 +21,6 @@ function printFileStats() {
 export -f printFileStats
 
 
-find . -name "*java" -type f | xargs -i egrep -l "public static.*\(" {} | parallel printFileStats {}
+find . -name "*java" -type f | xargs -i egrep -l "public static.*\(.*{$" {} | parallel printFileStats {}
  
 
