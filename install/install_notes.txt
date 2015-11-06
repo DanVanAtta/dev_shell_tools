@@ -57,4 +57,12 @@ make install
 ## harden the kernel a bit
 # Set: kernel.kptr_restrict = 2 in /etc/sysctl.d/10-kernel-hardening.conf
 
- 
+
+## firewall
+sudo ufw enable
+ ## enable rate limit
+sudo ufw limit ssh
+sudo ufw allow 22  ## only do this is password authentication is turned off for ssh (ssh key authentication only)
+sudo ufw allow 3300  ## triplea port
+ ## restart the firewall
+sudo systemctl restart ssh 
