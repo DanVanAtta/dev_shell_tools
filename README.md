@@ -1,2 +1,3 @@
-# git_shell_tools
-shell tools for working with git
+## linux tools
+
+Small toolbox of linux CLI tools. 
