@@ -19,6 +19,7 @@ alias sl='ls'
 alias LS='ls'
 alias PWD='pwd'
 alias CD='cd'
+alias grpe="grep"
 
 alias .1="cd ../"
 alias .2="cd ../../"
