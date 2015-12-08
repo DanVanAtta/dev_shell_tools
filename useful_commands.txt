@@ -1,0 +1,13 @@
+
+---------------------------------------
+Prepending to Commit Messages
+To prepend text to every commit message in a given range, you'd execute a message like:
+
+git filter-branch --msg-filter 'echo "bug ###### - \c" && cat' master..HEAD
+
+https://davidwalsh.name/update-git-commit-messages
+
+---------------------------------------
+
+
+
