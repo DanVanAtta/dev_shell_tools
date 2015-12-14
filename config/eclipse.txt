@@ -1,0 +1,4 @@
+http://www.eclipse.org/recommenders/download/
+
+Also enable auto static completion as well for hamcrest and mockito stuff, along with Preconditions
+
