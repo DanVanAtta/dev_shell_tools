@@ -1,0 +1,4 @@
+#!/bin/bash
+
+BRANCH=$(git branch | grep "^\*")
+git push origin -f $BRANCH
