@@ -15,3 +15,4 @@ Ubuntu dev environment setup:
   - `gc master`
   - `gupdate`
   - `git_push`
+- `git_new_branch_commit <branch_name> <file(s)>` Creates a new branch, commits the files specified to that branch, then returns to the original branch. List the file name only for the commit, path for it is found searching from the current folder
