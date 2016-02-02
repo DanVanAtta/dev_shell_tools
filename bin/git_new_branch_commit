@@ -23,10 +23,17 @@ echo "  current:   $CURRENT_BRANCH"
 
 INPUT_FILE_COUNT="$#"
 MODIFIED_FILE_COUNT=$(git status | grep -cP "^\t*modified:")
-echo "Files ($INPUT_FILE_COUNT of $MODIFIED_FILE_COUNT modified):"
+
+
+COMMIT_FILE_COUNT=$INPUT_FILE_COUNT
+if [ "$INPUT_FILE_COUNT" == 0 ]; then
+  COMMIT_FILE_COUNT=$MODIFIED_FILE_COUNT
+fi
+echo "Files ($COMMIT_FILE_COUNT of $MODIFIED_FILE_COUNT modified):"
 
 
 TMP_FILE=.filesToCommit.tmp
+touch $TMP_FILE
 while(($#)); do
   FILE_NAME=$1
   shift
@@ -36,7 +43,7 @@ done;
 
 
 FILES_TO_COMMIT_COUNT=$(grep -c "" $TMP_FILE)
-if [ $FILES_TO_COMMIT_COUNT != $INPUT_FILE_COUNT ]; then
+if [[ $FILES_TO_COMMIT_COUNT != 0 ]] && [[ $FILES_TO_COMMIT_COUNT != $INPUT_FILE_COUNT ]]; then
   echo "Error, found a duplicate file. Expected: $INPUT_FILE_COUNT, files but there were:  $FILES_TO_COMMIT_COUNT"
   echo "Displaying list of files found:"
   cat $TMP_FILE
@@ -52,9 +59,13 @@ echo
 
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
-  while read line; do
-    git diff $line
-  done < $TMP_FILE
+  if [[ $FILES_TO_COMMIT_COUNT != 0 ]]; then
+    while read line; do
+      git diff $line
+    done < $TMP_FILE
+  else
+    git diff
+  fi
 fi
 
 
@@ -64,8 +75,13 @@ echo
 if [[ $REPLY =~ ^[Yy]$ ]]
 then
   git checkout -b $BRANCH_NAME
-  git commit $(cat $TMP_FILE | tr '\n' ' ') 
-  COMMIT_EXIT=$?
+  if [[ $FILES_TO_COMMIT_COUNT != 0 ]]; then
+    git commit $(cat $TMP_FILE | tr '\n' ' ') 
+    COMMIT_EXIT=$?
+  else
+    git commit
+    COMMIT_EXIT=$?
+  fi
 else
   rm $TMP_FILE
   exit -1
