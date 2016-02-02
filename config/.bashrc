@@ -8,7 +8,7 @@ case $- in
       *) return;;
 esac
 
-export JAVA_HOME=/usr/lib/jvm/java-7-oracle/
+export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 export PATH=$PATH:/home/dan/bin
 export PATH=$PATH:/home/dan/bin/linux_tools_bin
 export PATH=$PATH:/home/dan/bin/hub
@@ -34,6 +34,7 @@ alias .9="cd ../../../../../../../../../"
 
   # sudo apt-get install libimage-exiftool-perl
 alias bitrate='exiftool -AudioBitrate'
+alias gpr='git fetch origin && git pull --rebase'
 alias gb='git branch'
 alias gc='git checkout'
 alias gd='git diff'
