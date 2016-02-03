@@ -2,6 +2,7 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
+
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
@@ -35,13 +36,11 @@ alias .9="cd ../../../../../../../../../"
   # sudo apt-get install libimage-exiftool-perl
 alias bitrate='exiftool -AudioBitrate'
 alias gpr='git fetch origin && git pull --rebase'
-alias gb='git branch'
-alias gc='git checkout'
 alias gd='git diff'
 alias gl='git log --stat'
 alias gr='git reset'
-alias gs='git status -sb'
-alias gss='git status'
+#alias gs='git status -sb'
+#alias gss='git status'
 alias gm='git checkout master'
 alias gupdate='git fetch upstream && git pull --rebase upstream master'
 alias gpm='git push origin master'
@@ -162,3 +161,5 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 
 # added by travis gem
 [ -f /home/dan/.travis/travis.sh ] && source /home/dan/.travis/travis.sh
+
+source ~/.scm_breeze/scm_breeze.sh
