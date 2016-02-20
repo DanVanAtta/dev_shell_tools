@@ -13,25 +13,22 @@ if [[ -z $GIT_NAME ]] || [[ -z $GIT_EMAIL ]]; then
 fi
 
 
+# TODO
+## harden the kernel a bit
+# Set: kernel.kptr_restrict = 2 in /etc/sysctl.d/10-kernel-hardening.conf
+
+
+
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:thefanclub/ubuntu-after-install
 
-
 sudo apt-get install git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
 sudo apt-get install cairo-dock cairo-dock-plug-ins ubuntu-after-install -y
 sudo apt-get install parallel compizconfig-settings-manager -y
-
-cd ~/
-mkdir -p work
-cd work
-git clone git@github.com:DanVanAtta/linux_tools.git
-cp linux_tools/.bashrc ~/.bashrc
-source ~/.bashrc
-
 
 
 
@@ -56,27 +53,18 @@ git config branch.autosetuprebase always --global
 git config --global push.default simple
 
 
+cd ~/
+mkdir -p work
+cd work
+git clone git@github.com:DanVanAtta/linux_tools.git
+cp linux_tools/.bashrc ~/.bashrc
+source ~/.bashrc
+
+
 # Install some cool fonts for source code "Hack":
 wget https://github.com/chrissimpkins/Hack/releases/download/v2.013/Hack-v2_013-ttf.zip
 unzip Hack.*zip
 sudo gnome-font-viewer *.ttf
-
-## Install Tig (git history viewer)
-
-sudo apt-get install libncurses-dev -y
-wget http://jonas.nitro.dk/tig/releases/tig-2.1.tar.gz
-tar -xvf tig*gz
-rm tig*gz
-mkdir -p ~/apps
-mv tig* ~/apps/
-cd ~/apps/tig*
-./configure   ## will check you have dependencies set up
-make
-make install
-
-
-## harden the kernel a bit
-# Set: kernel.kptr_restrict = 2 in /etc/sysctl.d/10-kernel-hardening.conf
 
 
 
@@ -95,6 +83,10 @@ git clone git://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
 ~/.scm_breeze/install.sh
 source ~/.bashrc   # or source ~/.zshrc
 
+sudo add-apt-repository ppa:kilian/f.lux
+sudo apt-get update
+sudo apt-get install fluxgui
+
 
 google-chrome https://www.yworks.com/products/yed/download &
 google-chrome https://justgetflux.com/ &
@@ -109,3 +101,5 @@ echo "run ubuntu-after-install, install flux, copy .bashrc and .vimrc to your ho
 echo turn on privacy
 echo  To do this, go to System Settings -> Security & Privacy :  disable record app results and the unity online search
 echo System settings > appearance -> enable workspaces
+
+
