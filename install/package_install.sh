@@ -8,7 +8,7 @@ function usage() {
   exit 1
 }
 
-if [[ -z $GIT_NAME ]] || [[ -z $GIT_EMAIL ]; then
+if [[ -z $GIT_NAME ]] || [[ -z $GIT_EMAIL ]]; then
   usage()
 fi
 
