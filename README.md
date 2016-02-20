@@ -1,7 +1,9 @@
-Ubuntu dev environment setup:
-- https://github.com/DanVanAtta/linux_tools/tree/master/install
-- https://github.com/DanVanAtta/linux_tools/tree/master/config
-
+Ubuntu dev environment setup
+```
+wget https://raw.githubusercontent.com/DanVanAtta/linux_tools/master/install/package_install.sh
+chmod +x package_install.sh
+./package_install.sh $git_username $git_email
+```
 
 [Git command shortcuts and other linux CLI tools](https://github.com/DanVanAtta/linux_tools/tree/master/bin)
 
