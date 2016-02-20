@@ -12,6 +12,8 @@ if [[ -z $GIT_NAME ]] || [[ -z $GIT_EMAIL ]]; then
   usage()
 fi
 
+cd ~
+rm -rf Music/ Public/ Templates/
 
 # TODO
 ## harden the kernel a bit
