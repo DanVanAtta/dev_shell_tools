@@ -63,13 +63,6 @@ cp linux_tools/.bashrc ~/.bashrc
 source ~/.bashrc
 
 
-# Install some cool fonts for source code "Hack":
-wget https://github.com/chrissimpkins/Hack/releases/download/v2.013/Hack-v2_013-ttf.zip
-unzip Hack.*zip
-sudo gnome-font-viewer *.ttf
-
-
-
 ## firewall
 sudo ufw enable
  ## enable rate limit
