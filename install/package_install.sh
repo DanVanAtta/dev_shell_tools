@@ -8,19 +8,20 @@ function usage() {
   exit 1
 }
 
+
 if [[ -z "$GIT_NAME" ]] || [[ -z "$GIT_EMAIL" ]]; then
   usage
 fi
 
 cd ~
-rm -rf ~/Music/ ~/Public/ ~/Templates/ ~/Videos/ ~/Documents
-mkdir -p ~/work
-
+rm -rf Music/ Public/ Templates/
 
 # TODO
 ## harden the kernel a bit
 # Set: kernel.kptr_restrict = 2 in /etc/sysctl.d/10-kernel-hardening.conf
 
+#echo "show hidden start up application in startup applications app, remove unnecessary ones there"
+#sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
 
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
@@ -28,6 +29,8 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:thefanclub/ubuntu-after-install
+sudo add-apt-repository ppa:kilian/f.lux
+sudo apt-get update
 
 sudo apt-get install git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
@@ -57,9 +60,13 @@ git config branch.autosetuprebase always --global
 git config --global push.default simple
 
 
-cd ~/work
+cd ~/
+mkdir -p work
+cd work
 git clone git@github.com:DanVanAtta/linux_tools.git
-cp linux_tools/.bashrc ~/.bashrc
+cp linux_tools/config/.bashrc ~/
+cp linux_tools/config/.vimrc ~/
+
 source ~/.bashrc
 
 
@@ -78,8 +85,6 @@ git clone git://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
 ~/.scm_breeze/install.sh
 source ~/.bashrc   # or source ~/.zshrc
 
-sudo add-apt-repository ppa:kilian/f.lux
-sudo apt-get update
 sudo apt-get install fluxgui
 
 
@@ -87,14 +92,11 @@ google-chrome https://www.yworks.com/products/yed/download &
 google-chrome https://justgetflux.com/ &
 
 sudo apt-get upgrade
-sudo apt-get update
 
-echo "show hidden start up application in startup applications app, remove unnecessary ones there"
-sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
 
-echo "run ubuntu-after-install, install flux, copy .bashrc and .vimrc to your home folder"
-echo turn on privacy
-echo  To do this, go to System Settings -> Security & Privacy :  disable record app results and the unity online search
-echo System settings > appearance -> enable workspaces
+echo "run ubuntu-after-install"
+echo "turn on privacy"
+echo  "To do this, go to System Settings -> Security & Privacy :  disable record app results and the unity online search"
+echo "System settings > appearance -> enable workspaces"
 
 
