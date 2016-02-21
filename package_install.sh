@@ -19,6 +19,7 @@ rm -rf Music/ Public/ Templates/
 # TODO
 ## harden the kernel a bit
 # Set: kernel.kptr_restrict = 2 in /etc/sysctl.d/10-kernel-hardening.conf
+# install node
 
 #echo "show hidden start up application in startup applications app, remove unnecessary ones there"
 #sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
