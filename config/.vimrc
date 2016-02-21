@@ -1,4 +1,3 @@
-color desert
 
 set nocompatible
 set so=7
