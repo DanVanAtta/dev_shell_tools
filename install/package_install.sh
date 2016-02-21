@@ -13,7 +13,9 @@ if [[ -z "$GIT_NAME" ]] || [[ -z "$GIT_EMAIL" ]]; then
 fi
 
 cd ~
-rm -rf Music/ Public/ Templates/
+rm -rf ~/Music/ ~/Public/ ~/Templates/ ~/Videos/ ~/Documents
+mkdir -p ~/work
+
 
 # TODO
 ## harden the kernel a bit
@@ -55,9 +57,7 @@ git config branch.autosetuprebase always --global
 git config --global push.default simple
 
 
-cd ~/
-mkdir -p work
-cd work
+cd ~/work
 git clone git@github.com:DanVanAtta/linux_tools.git
 cp linux_tools/.bashrc ~/.bashrc
 source ~/.bashrc
