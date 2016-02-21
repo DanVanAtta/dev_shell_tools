@@ -30,7 +30,6 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:thefanclub/ubuntu-after-install
-sudo add-apt-repository ppa:kilian/f.lux
 sudo apt-get update
 
 sudo apt-get install git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
@@ -86,11 +85,13 @@ git clone git://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
 ~/.scm_breeze/install.sh
 source ~/.bashrc   # or source ~/.zshrc
 
-sudo apt-get install fluxgui
-
-
 google-chrome https://www.yworks.com/products/yed/download &
-google-chrome https://justgetflux.com/ &
+
+cd ~
+wget https://justgetflux.com/linux/xflux64.tgz
+tar -xvf xflux64.tgz 
+mv xflux apps/
+rm xflux64.tgz
 
 sudo apt-get upgrade
 
