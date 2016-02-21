@@ -1,6 +1,6 @@
 Ubuntu dev environment setup
 ```
-wget https://raw.githubusercontent.com/DanVanAtta/linux_tools/master/install/package_install.sh
+wget https://raw.githubusercontent.com/DanVanAtta/linux_tools/master/package_install.sh
 chmod +x package_install.sh
 ./package_install.sh $git_username $git_email
 ```
