@@ -10,9 +10,7 @@ case $- in
 esac
 
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
-export PATH=$PATH:/home/dan/bin
-export PATH=$PATH:/home/dan/bin/linux_tools_bin
-export PATH=$PATH:/home/dan/bin/hub
+export PATH=$PATH:/home/dan/work/linux_tools/bin
 export PATH=$PATH:/home/dan/apps/node-v4.1.1-linux-x64/bin
 
  ## some common typos
@@ -162,4 +160,4 @@ export PATH="$PATH:$HOME/.rvm/bin" # Add RVM to PATH for scripting
 # added by travis gem
 [ -f /home/dan/.travis/travis.sh ] && source /home/dan/.travis/travis.sh
 
-source ~/.scm_breeze/scm_breeze.sh
+
