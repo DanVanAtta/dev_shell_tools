@@ -8,6 +8,10 @@ function usage() {
   exit 1
 }
 
+echo "download /etc/hosts adblocking list"
+wget https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
+sudo cp /etc/hosts /etc/hosts.backup
+sudo mv hosts /etc/hosts
 
 if [[ -z "$GIT_NAME" ]] || [[ -z "$GIT_EMAIL" ]]; then
   usage
