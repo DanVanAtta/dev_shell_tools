@@ -34,12 +34,14 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-3
 sudo add-apt-repository ppa:thefanclub/ubuntu-after-install
+sudo apt-get install oracle-java8-installer
 sudo apt-get update
 
 sudo apt-get install git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
 sudo apt-get install cairo-dock cairo-dock-plug-ins ubuntu-after-install -y
 sudo apt-get install parallel expect ruby ruby-dev compizconfig-settings-manager libxml2-utils  -y
+sudo apt-get install oracle-java8-installer -y
 
 sudo gem install travis -v 1.8.2 --no-rdoc --no-ri
 
