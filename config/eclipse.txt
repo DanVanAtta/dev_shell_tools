@@ -1,6 +1,11 @@
 Install latest: http://ubuntuhandbook.org/index.php/2014/06/install-latest-eclipse-ubuntu-14-04/
 
+
 http://www.eclipse.org/recommenders/download/
+https://marketplace.eclipse.org/content/gradle-integration-eclipse-0
+http://marketplace.eclipse.org/content/buildship-gradle-integration
+
+
 
 Also enable auto static completion as well for hamcrest and mockito stuff, along with Preconditions
 
