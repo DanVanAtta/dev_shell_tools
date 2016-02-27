@@ -6,6 +6,7 @@ https://marketplace.eclipse.org/content/gradle-integration-eclipse-0
 http://marketplace.eclipse.org/content/buildship-gradle-integration
 
 
+## enable double click highlight  Window->Preferences in the menu, then Java->Editor->Mark Occurrences 
 
 Also enable auto static completion as well for hamcrest and mockito stuff, along with Preconditions
 
