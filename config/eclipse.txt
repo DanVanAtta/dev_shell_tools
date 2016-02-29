@@ -12,12 +12,15 @@ Also enable auto static completion as well for hamcrest and mockito stuff, along
 
 
 ------------------
-Window > Preferences > Java > Editor > Content Assist > Favorits
+Window > Preferences > Java > Editor > Content Assist > Favorites
 
 com.google.common.base.Preconditions.*
 org.hamcrest.matchers.*
 org.junit.Assert.*
 org.mockito.Matchers.*
+org.hamcrest.core.IsInstanceOf.*
+
+
 
 //  'import static org.mockito.Mockito.when'
 
