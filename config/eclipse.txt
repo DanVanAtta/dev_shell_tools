@@ -5,9 +5,13 @@ Copy the file eclipse.desktop file to:
 Install latest: http://ubuntuhandbook.org/index.php/2014/06/install-latest-eclipse-ubuntu-14-04/
 
 
+
 http://www.eclipse.org/recommenders/download/
 https://marketplace.eclipse.org/content/gradle-integration-eclipse-0
 http://marketplace.eclipse.org/content/buildship-gradle-integration
+
+
+Update site: http://download.oracle.com/technology/products/missioncontrol/updatesites/base/5.5.0/eclipse/
 
 
 ## enable double click highlight  Window->Preferences in the menu, then Java->Editor->Mark Occurrences 
