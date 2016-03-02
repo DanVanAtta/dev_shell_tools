@@ -1,3 +1,7 @@
+Copy the file eclipse.desktop file to:
+~/.local/share/applications/eclipse.desktop
+
+
 Install latest: http://ubuntuhandbook.org/index.php/2014/06/install-latest-eclipse-ubuntu-14-04/
 
 
