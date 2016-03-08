@@ -1,9 +1,10 @@
 Copy the file eclipse.desktop file to:
 ~/.local/share/applications/eclipse.desktop
 
+Edit eclipse.ini (find ~ -name "eclipse.ini"), boost max memory
+
 
 Install latest: http://ubuntuhandbook.org/index.php/2014/06/install-latest-eclipse-ubuntu-14-04/
-
 
 
 http://www.eclipse.org/recommenders/download/
