@@ -1,0 +1,15 @@
+#!/bin/bash
+
+TAG_TO_DELETE=$1
+
+function usage() {
+  echo "$(basename $0) <tag_to_delete>"
+  exit 1
+}
+
+if [ -z "$TAG_TO_DELETE" ]; then
+  usage
+fi
+
+git tag -d "$TAG_TO_DELETE"
+git push origin ":refs/tags/$TAG_TO_DELETE"
