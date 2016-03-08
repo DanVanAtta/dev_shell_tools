@@ -11,7 +11,7 @@ function usage() {
 
 echo "install xflux local launcher file"
 XFLUX_LAUNCHER_FILE="config/xflux.desktop"
-sed -i "s|/home/dan/|/home/$USER/g" XFLUX_LAUNCHER_FILE
+sed -i "s|/home/dan|/home/$USER|g" XFLUX_LAUNCHER_FILE
 cp $XFLUX_LAUNCHER_FILE ~/.config/autostart/
 
 echo "download /etc/hosts adblocking list"
