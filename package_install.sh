@@ -1,5 +1,10 @@
 #!/bin/bash
 
+
+if [ ! "$USER" -eq "dan" ]; then
+  echo "Warning /home/dan is probably hardcoded, this does not match the current user:  $USER"
+fi
+
 GIT_NAME=$1
 GIT_EMAIL=$2
 
@@ -7,6 +12,10 @@ function usage() {
   echo "usage: $(basename $0) <git_name> <git_email>"
   exit 1
 }
+
+echo "install xflux local launcher file"
+XFLUX_LAUNCHER_FILE="config/xflux.desktop"
+cp $XFLUX_LAUNCHER_FILE ~/.config/autostart/
 
 echo "download /etc/hosts adblocking list"
 wget https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
