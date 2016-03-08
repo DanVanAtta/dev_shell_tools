@@ -17,6 +17,8 @@ Update site: http://download.oracle.com/technology/products/missioncontrol/updat
 
 ## enable double click highlight  Window->Preferences in the menu, then Java->Editor->Mark Occurrences 
 
+http://stackoverflow.com/questions/91984/how-do-i-hotkey-directly-to-file-search-tab-in-eclipse
+
 Also enable auto static completion as well for hamcrest and mockito stuff, along with Preconditions
 
 
