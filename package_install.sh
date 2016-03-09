@@ -49,6 +49,7 @@ sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uu
 sudo apt-get install cairo-dock cairo-dock-plug-ins ubuntu-after-install -y
 sudo apt-get install parallel expect ruby ruby-dev compizconfig-settings-manager libxml2-utils  -y
 sudo apt-get install oracle-java8-installer -y
+sudo apt-get iftop htop -y
 
 sudo gem install travis -v 1.8.2 --no-rdoc --no-ri
 
