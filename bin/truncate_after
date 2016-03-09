@@ -1,0 +1,9 @@
+#!/bin/bash
+
+if [ -z "$1" ]; then
+ echo "Error, no truncation token specified, required one arg."
+ echo "Example: `basename $0` abc"
+fi
+
+read input
+echo $input | sed "s/$1.*//g"
