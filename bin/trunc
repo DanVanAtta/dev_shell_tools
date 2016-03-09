@@ -2,7 +2,8 @@
 
 if [ -z "$1" ]; then
  echo "Error, no truncation token specified, required one arg."
- echo "Example: `basename $0` abc"
+ echo "Usage:  $(basename $0) <token>"
+ echo "Example:  echo '123abc123' | $(basename $0) abc -> '123abc'" 
 fi
 
 read input
