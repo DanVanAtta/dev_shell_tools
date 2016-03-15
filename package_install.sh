@@ -39,9 +39,11 @@ rm -rf Music/ Public/ Templates/
 wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
 
-sudo add-apt-repository ppa:webupd8team/sublime-text-3
-sudo add-apt-repository ppa:thefanclub/ubuntu-after-install
-sudo apt-get install oracle-java8-installer
+sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
+sudo add-apt-repository ppa:thefanclub/ubuntu-after-install -y
+sudo apt-get install oracle-java8-installer -y
+# fail2ban looks for suspicious login attempts and blocks them
+sudo apt-get fail2ban -y
 sudo apt-get update
 
 sudo apt-get install git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
@@ -53,6 +55,11 @@ sudo apt-get iftop htop -y
 
 sudo gem install travis -v 1.8.2 --no-rdoc --no-ri
 
+sudo apt-get install openssh-server 
+
+echo "on the next window, disable passwordles login"
+read
+vi /etc/ssh/sshd_config
 
 service apparmor stop 
 update-rc.d -f apparmor remove 
