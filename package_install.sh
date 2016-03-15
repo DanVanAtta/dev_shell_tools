@@ -18,7 +18,7 @@ cp $XFLUX_LAUNCHER_FILE ~/.config/autostart/
 echo "download /etc/hosts adblocking list"
 wget https://raw.githubusercontent.com/StevenBlack/hosts/master/hosts
 sudo cp /etc/hosts /etc/hosts.backup
-sudo mv hosts /etc/hosts
+cat hosts | sudo tee -a /etc/hosts
 
 if [[ -z "$GIT_NAME" ]] || [[ -z "$GIT_EMAIL" ]]; then
   usage
@@ -41,25 +41,22 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
 sudo add-apt-repository ppa:thefanclub/ubuntu-after-install -y
-sudo apt-get install oracle-java8-installer -y
+
 # fail2ban looks for suspicious login attempts and blocks them
-sudo apt-get fail2ban -y
 sudo apt-get update
+sudo apt-get install oracle-java8-installer fail2ban ttf-liberation -y
 
 sudo apt-get install git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
-sudo apt-get install cairo-dock cairo-dock-plug-ins ubuntu-after-install -y
+# sudo apt-get install cairo-dock cairo-dock-plug-ins 
+sudo apt-get install ubuntu-after-install -y
 sudo apt-get install parallel expect ruby ruby-dev compizconfig-settings-manager libxml2-utils  -y
-sudo apt-get install oracle-java8-installer -y
-sudo apt-get iftop htop -y
-
+sudo apt-get install oracle-java8-installer iftop htop openssh-server -y
 sudo gem install travis -v 1.8.2 --no-rdoc --no-ri
 
-sudo apt-get install openssh-server 
-
-echo "on the next window, disable passwordles login"
+echo "on the next window, disable passwordles login, hit enter to continue"
 read
-vi /etc/ssh/sshd_config
+sudo vi /etc/ssh/sshd_config
 
 service apparmor stop 
 update-rc.d -f apparmor remove 
@@ -124,3 +121,5 @@ echo  "To do this, go to System Settings -> Security & Privacy :  disable record
 echo "System settings > appearance -> enable workspaces"
 
 
+echo ""
+echo "Also, ttf-liberation font has been installed, can select that in terminal.."
