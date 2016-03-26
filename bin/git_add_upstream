@@ -1,0 +1,24 @@
+#!/bin/bash
+
+
+UPSTREAM=$1
+
+if [ -z "$UPSTREAM" ]; then
+  echo "usage: $(basename $0) <upstream_name>"
+  echo "description: adds an upstream fork, uses 'git remote -v' to determine origin"
+  exit 1
+fi
+
+
+UPSTREAM_COUNT=$(git remote -v | grep -c "^upstream")
+if [ "$UPSTREAM_COUNT" != 0 ]; then
+  echo "Warning, an upstream remote already exists, will not run." 
+  echo "upstream remote already exists, run: 'git remote delete upstream', then re-add a new upstream."
+  git remote -v
+  exit 2
+fi
+
+
+git remote add upstream $(git remote -v | grep "^origin" | head -1 | sed "s|^.*git@github.com:.*/\(.*\) .*|git@github.com:$UPSTREAM/\1|")
+git remote -v
+echo "Upstream added"
