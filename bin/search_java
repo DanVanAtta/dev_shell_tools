@@ -1,0 +1,15 @@
+#!/bin/bash
+
+SEARCH_TERM=$1
+FLAGS=$2
+set -ue
+
+if [[ -z "$SEARCH_TERM" ]]; then
+  echo "usage: $(basename $0) <search_term> [grep_flags]"
+  echo "   search_term: grep regex to be used"
+  echo "   grep_flags: (optional) any grep flags '-h' is typical perhaps to hide file names"
+  echo "Script searches all java files from current location, grepping for a regex."
+  exit -1
+fi
+
+find . -name "*.java" | xargs grep $FLAGS "$SEARCH_TERM"

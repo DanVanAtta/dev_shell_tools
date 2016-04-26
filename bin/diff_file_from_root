@@ -1,0 +1,10 @@
+#!/bin/bash
+
+FILE_TO_DIFF=$0
+ROOT_FOLDER=$1
+ROOT_FOLDER $2
+
+set -u
+# TODO : just read root folders from the rest of the arg list.
+
+diff $(find $ROOT_FOLDER_LHS -name "$FILE_TO_DIFF") $(find $ROOT_FOLDER_RHS -name "$FILE_TO_DIFF)
