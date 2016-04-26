@@ -1,0 +1,13 @@
+#!/bin/bash
+
+SEARCH_FILE=$1
+set -ue
+
+if [[ -z "$SEARCH_FILE" ]]; then
+  echo "usage: $(basename $0) <search_file>"
+  echo "   search_file: name of the java file to search for"
+  echo "Script searches for all java files matching the input name."
+  exit -1
+fi
+
+find . -name "$SEARCH_FILE.java"
