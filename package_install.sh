@@ -44,7 +44,7 @@ sudo add-apt-repository ppa:thefanclub/ubuntu-after-install -y
 
 # fail2ban looks for suspicious login attempts and blocks them
 sudo apt-get update
-sudo apt-get install maven openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop -y
+sudo apt-get install mysql-server maven openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop -y
 
 sudo apt-get install git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
@@ -124,5 +124,3 @@ echo "System settings > appearance -> enable workspaces"
 echo ""
 echo "Also, ttf-liberation font has been installed, can select that in terminal.."
 
-echo "Install these by hand: Mysql (to be added to the script one day."
-echo "  - MySQL WorkBench"
