@@ -123,3 +123,6 @@ echo "System settings > appearance -> enable workspaces"
 
 echo ""
 echo "Also, ttf-liberation font has been installed, can select that in terminal.."
+
+echo "Install these by hand: Mysql (to be added to the script one day."
+echo "  - MySQL WorkBench"
