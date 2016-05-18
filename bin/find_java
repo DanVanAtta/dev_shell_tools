@@ -10,4 +10,8 @@ if [[ -z "$SEARCH_FILE" ]]; then
   exit -1
 fi
 
-find . -name "$SEARCH_FILE.java"
+if [[ "$SEARCH_FILE" =~ .*java ]]; then
+  find . -name "$SEARCH_FILE"
+else
+  find . -name "$SEARCH_FILE.java"
+fi
