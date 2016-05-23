@@ -46,7 +46,7 @@ sudo add-apt-repository ppa:thefanclub/ubuntu-after-install -y
 sudo apt-get update
 sudo apt-get install gimp htop mysql-server maven openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop -y
 
-sudo apt-get install git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
+sudo apt-get install dos2unix vagrant git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
 # sudo apt-get install cairo-dock cairo-dock-plug-ins 
 sudo apt-get install ubuntu-after-install -y
