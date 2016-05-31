@@ -9,6 +9,8 @@ case $- in
       *) return;;
 esac
 
+export PROMPT_COMMAND='if [ "$(id -u)" -ne 0 ]; then echo "$(date "+%Y-%m-%d.%H:%M:%S") $(pwd) $(history 1)" >> ~/.logs/bash-history-$(date "+%Y-%m-%d").log; fi'
+
 export JAVA_HOME=/usr/lib/jvm/java-8-oracle/
 export PATH=$PATH:/home/dan/work/linux_tools/bin
 export PATH=$PATH:/home/dan/apps/node-v4.1.1-linux-x64/bin
