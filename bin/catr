@@ -2,4 +2,11 @@
 FILE_TO_CAT=$1
 
 set -eu 
-cat $(find -name "$FILE_TO_CAT" -type f)
+
+
+find -name $FILE_TO_CAT | wc -l
+
+
+for i in $(find -name "$FILE_TO_CAT" -type f); do
+  echo $i;
+done;
