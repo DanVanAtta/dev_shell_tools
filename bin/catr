@@ -1,0 +1,5 @@
+#!/bin/bash
+FILE_TO_CAT=$1
+
+set -eu 
+cat $(find -name "$FILE_TO_CAT" -type f)
