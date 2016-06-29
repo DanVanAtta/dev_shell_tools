@@ -1,0 +1,5 @@
+#!/bin/bash
+FILE_NAME=$1
+
+diff $(find . -name "$FILE_NAME" -type f | head -1) $(find . -name "$FILE_NAME" -type f | tail -1)
+
