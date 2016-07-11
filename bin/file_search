@@ -1,0 +1,16 @@
+FILE_SUFFIX=$1
+SEARCH_TERM=$2
+GREP_FLAGS=$3
+
+if [ "$GREP_FLAGS" = "" ]; then
+ GREP_FLAGS="-l"
+fi
+
+COUNT=0
+
+HIT=0
+while read filePath; do
+ COUNT=$((COUNT + 1))
+ grep "$GREP_FLAGS" "$SEARCH_TERM" "$filePath" & HIT=$((HIT+1))
+done < <(find . -name "*$FILE_SUFFIX")
+
