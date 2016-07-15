@@ -27,6 +27,11 @@ fi
 cd ~
 rm -rf Music/ Public/ Templates/
 
+
+# install diff-so-fancy  - https://github.com/so-fancy/diff-so-fancy
+sudo npm install -g diff-so-fancy
+git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
+
 # TODO
 ## harden the kernel a bit
 # Set: kernel.kptr_restrict = 2 in /etc/sysctl.d/10-kernel-hardening.conf
