@@ -48,7 +48,7 @@ sudo add-apt-repository ppa:thefanclub/ubuntu-after-install -y
 
 # fail2ban looks for suspicious login attempts and blocks them
 sudo apt-get update
-sudo apt-get install gimp htop mysql-server maven openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop -y
+sudo apt-get install openvpn gimp htop mysql-server maven openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop -y
 
 sudo apt-get install dos2unix vagrant git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
 sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
