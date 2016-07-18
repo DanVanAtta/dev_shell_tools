@@ -17,3 +17,17 @@ wget https://raw.githubusercontent.com/DanVanAtta/linux_tools/master/package_ins
 chmod +x package_install.sh
 ./package_install.sh $git_username $git_email
 ```
+
+Settings
+- Appearance > Behavior
+ - enable workspaces
+ - auto-hide launcher = on
+ - reveal sensitivity -> higher
+ - show menus for a window > in the window's title bar
+- Brightness and lock
+ - turn screen off > 30 minutes
+- Security and Privacy
+ - Files and Applications
+   - record file and application usage > off
+ - Search
+   - include online search results > off
