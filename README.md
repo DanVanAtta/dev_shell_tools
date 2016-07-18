@@ -1,12 +1,4 @@
-Ubuntu dev environment setup
-```
-wget https://raw.githubusercontent.com/DanVanAtta/linux_tools/master/package_install.sh
-chmod +x package_install.sh
-./package_install.sh $git_username $git_email
-```
-
 [Git command shortcuts and other linux CLI tools](https://github.com/DanVanAtta/linux_tools/tree/master/bin)
-
 
 - `git_squash 2`  Squashes the last two commits
 - `git_push` Pushes the current branch
@@ -18,3 +10,10 @@ chmod +x package_install.sh
   - `gupdate`
   - `git_push`
 - `git_new_branch_commit <branch_name> <file(s)>` Creates a new branch, commits the files specified to that branch, then returns to the original branch. List the file name only for the commit, path for it is found searching from the current folder
+
+Ubuntu dev environment setup
+```
+wget https://raw.githubusercontent.com/DanVanAtta/linux_tools/master/package_install.sh
+chmod +x package_install.sh
+./package_install.sh $git_username $git_email
+```
