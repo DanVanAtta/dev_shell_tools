@@ -23,7 +23,6 @@ Settings
  - enable workspaces
  - auto-hide launcher = on
  - reveal sensitivity -> higher
- - show menus for a window > in the window's title bar
 - Brightness and lock
  - turn screen off > 30 minutes
 - Security and Privacy
