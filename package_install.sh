@@ -30,15 +30,6 @@ rm -rf Music/ Public/ Templates/
 
 # install diff-so-fancy  - https://github.com/so-fancy/diff-so-fancy
 sudo npm install -g diff-so-fancy
-git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
-
-
-# fancy diff color
-git config --global color.diff-highlight.oldNormal "red bold"
-git config --global color.diff-highlight.oldHighlight "red bold 52"
-git config --global color.diff-highlight.newNormal "green bold"
-git config --global color.diff-highlight.newHighlight "green bold 22"
-
 
 # TODO
 ## harden the kernel a bit
@@ -82,6 +73,7 @@ echo select no for dash, default shell will be bash and not dash
 sudo dpkg-reconfigure dash  
 
 
+
 echo "Run git config:"
 git config --global user.email $GIT_EMAIL
 git config --global user.name $GIT_NAME
@@ -90,6 +82,15 @@ git config --global merge.tool meld
 git config --global core.autocrlf input
 git config branch.autosetuprebase always --global
 git config --global push.default simple
+
+git config --global core.pager "diff-so-fancy | less --tabs=2 -RFX"
+
+# fancy diff color
+git config --global color.diff-highlight.oldNormal "red bold"
+git config --global color.diff-highlight.oldHighlight "red bold 52"
+git config --global color.diff-highlight.newNormal "green bold"
+git config --global color.diff-highlight.newHighlight "green bold 22"
+
 
 
 cd ~/
@@ -126,14 +127,4 @@ mv xflux apps/
 rm xflux64.tgz
 
 sudo apt-get upgrade
-
-
-echo "run ubuntu-after-install"
-echo "turn on privacy"
-echo  "To do this, go to System Settings -> Security & Privacy :  disable record app results and the unity online search"
-echo "System settings > appearance -> enable workspaces"
-
-
-echo ""
-echo "Also, ttf-liberation font has been installed, can select that in terminal.."
 
