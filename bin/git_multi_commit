@@ -1,3 +1,0 @@
-
-#  for i in $(seq 1 8); do echo $i; git_rebranch "rename$i"; gc 1 -m "Remove 'm_' variable prefix"; git_push; done; 
-
