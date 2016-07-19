@@ -45,17 +45,12 @@ sudo sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /et
 
 sudo add-apt-repository ppa:webupd8team/sublime-text-3 -y
 sudo add-apt-repository ppa:thefanclub/ubuntu-after-install -y
+sudo add-apt-repository ppa:webupd8team/java
 
-# fail2ban looks for suspicious login attempts and blocks them
 sudo apt-get update
-sudo apt-get install npm openvpn gimp htop mysql-server maven openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop -y
 
-sudo apt-get install dos2unix vagrant git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor -y
-sudo apt-get install unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller -y
-# sudo apt-get install cairo-dock cairo-dock-plug-ins 
-sudo apt-get install ubuntu-after-install -y
-sudo apt-get install parallel expect ruby ruby-dev compizconfig-settings-manager libxml2-utils  -y
-sudo apt-get install oracle-java8-installer iftop htop openssh-server -y
+sudo apt-get install npm openvpn gimp htop mysql-server maven openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop dos2unix vagrant git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller parallel expect ruby ruby-dev compizconfig-settings-manager libxml2-utils iftop htop openssh-server -y
+
 sudo gem install travis -v 1.8.2 --no-rdoc --no-ri
 
 echo "on the next window, disable passwordles login, hit enter to continue"
