@@ -114,6 +114,7 @@ git clone git://github.com/ndbroadbent/scm_breeze.git ~/.scm_breeze
 source ~/.bashrc   # or source ~/.zshrc
 
 google-chrome https://www.yworks.com/products/yed/download &
+google-chrome http://dev.mysql.com/downloads/workbench/ & 
 
 cd ~
 wget https://justgetflux.com/linux/xflux64.tgz
@@ -122,4 +123,6 @@ mv xflux apps/
 rm xflux64.tgz
 
 sudo apt-get upgrade
+
+
 
