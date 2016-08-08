@@ -48,7 +48,7 @@ sudo add-apt-repository ppa:webupd8team/java
 
 sudo apt-get update
 
-sudo apt-get install traceroute apache2 virtualbox clamav php5-cli shellcheck maven npm openvpn gimp htop mysql-server openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop dos2unix vagrant git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller parallel expect ruby ruby-dev compizconfig-settings-manager libxml2-utils iftop htop openssh-server -y
+sudo apt-get install htop traceroute apache2 virtualbox clamav php5-cli shellcheck maven npm openvpn gimp htop mysql-server openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop dos2unix vagrant git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller parallel expect ruby ruby-dev compizconfig-settings-manager libxml2-utils iftop htop openssh-server -y
 
 sudo gem install travis -v 1.8.2 --no-rdoc --no-ri
 
