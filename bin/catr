@@ -8,5 +8,5 @@ find -name $FILE_TO_CAT | wc -l
 
 
 for i in $(find -name "$FILE_TO_CAT" -type f); do
-  echo $i;
+  cat $i;
 done;
