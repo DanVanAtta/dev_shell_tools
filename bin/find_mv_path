@@ -1,0 +1,29 @@
+#!/bin/bash
+
+FILE=$1
+TARGET=$2
+
+set -ue
+
+FILE=$(find . -name "$1")
+
+if [ -z "$FILE" ] || [ -z "$TARGET" ]; then
+  echo "Did not find file: $FILE, or target was empty: $TARGET" 
+  echo "usage: $(basename $0) [path_to_file] [target_folder]"
+  exit 1
+fi
+
+if [ ! -f "$FILE" ]; then
+ echo "Error: first arg does not exist: $FILE"
+ exit -1
+fi
+
+if [ ! -d "$TARGET" ]; then
+  echo "Second arg must be a directory: $TARGET"
+fi 
+
+
+TARGET_PATH=$TARGET/$FILE
+
+mkdir -p $(dirname $TARGET_PATH);
+mv -v $FILE $TARGET_PATH;
