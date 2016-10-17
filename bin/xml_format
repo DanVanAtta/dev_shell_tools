@@ -1,0 +1,17 @@
+#!/bin/bash
+
+FILE=$1
+set -eu
+
+function usage() {
+  echo "usage: $(basename $0) [xml_file]"
+  echo "  xml_file: the file to be formatted"
+  exit -1
+}
+
+if [ ! -f "$FILE" ]; then
+  usage
+fi
+
+
+xmllint --format $FILE > $FILE.formatted && mv $FILE.formatted $FILE
