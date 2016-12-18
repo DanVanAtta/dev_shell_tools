@@ -1,2 +1,0 @@
-#!/bin/bash
-git mergetool $(find . -name "$1" -type f)

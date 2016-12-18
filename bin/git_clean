@@ -1,8 +1,0 @@
-#!/bin/bash
-
-for i in $(git status | grep modified |  sed 's/^.*modified: *//g'); do
-  echo "cleaning $i"
-  dos2unix -q $i
-#  sed -i 's/  *$//g' $i
-#  sed -i 's/\t\t*$//g' $i
-done;

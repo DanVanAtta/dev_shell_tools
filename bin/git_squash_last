@@ -1,2 +1,0 @@
-#!/bin/bash
-git commit . -m "." && git_squash 2

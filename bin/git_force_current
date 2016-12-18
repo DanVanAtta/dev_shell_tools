@@ -1,5 +1,0 @@
-#!/bin/bash
-
-BRANCH=$(git branch | grep "^\*" | sed 's|^\* ||g')
-echo "FORCE Pushing Branch: $BRANCH"
-git push origin -f $BRANCH

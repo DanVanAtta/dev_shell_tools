@@ -1,7 +1,0 @@
-#!/bin/bash
-
-if [ -z "$1" ]; then
-  echo "usage: $(basename $0) <file>"
-  echo "  resets the target file to head and checks it out"
-fi
-git reset HEAD $1 && git checkout $1
