@@ -3,7 +3,7 @@
 X=$1
 Y=$2
 WIDTH=$3
-HEIGTH=$4
+HEIGHT=$4
 DURATION=$5
 
 set -eu 
@@ -32,5 +32,5 @@ if [ -z "$DURATION" ]; then
 fi
 
 
-byzanz-record --duration=$DURATION --x=$X --y=$Y --width=$WIDTH --height=HEIGHT out.gif
+byzanz-record --duration=$DURATION --x=$X --y=$Y --width=$WIDTH --height=$HEIGHT out.gif
 
