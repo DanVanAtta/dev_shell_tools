@@ -1,0 +1,36 @@
+#!/bin/bash
+
+X=$1
+Y=$2
+WIDTH=$3
+HEIGTH=$4
+DURATION=$5
+
+set -eu 
+
+
+## install byzanz if it is not installed
+if ! hash byzanz-record &> /dev/null; then
+  sudo add-apt-repository ppa:fossfreedom/byzanz
+  sudo apt-get update && sudo apt-get install byzanz
+fi
+
+function usage() {
+  echo "usage: $(basename $0) x y width heigth duration"
+  echo " x: left hand edge position to record from"
+  echo " y: top edge location of the recoding"
+  echo " width: number pixels width for the recording"
+  echo " height: pixel height of the recording"
+  echo " duration: duration in seconds to record for"
+  exit 1
+}
+
+# being lazy, should check each var, and that they are numeric, give
+# message about which ones are bad. For now we do some arg checking..
+if [ -z "$DURATION" ]; then
+  usage
+fi
+
+
+byzanz-record --duration=$DURATION --x=$X --y=$Y --width=$WIDTH --height=HEIGHT out.gif
+
