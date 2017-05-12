@@ -28,13 +28,12 @@ cd ~
 rm -rf Music/ Public/ Templates/
 
 
-# install diff-so-fancy  - https://github.com/so-fancy/diff-so-fancy
-sudo npm install -g diff-so-fancy
-
-# TODO
 ## harden the kernel a bit
 # Set: kernel.kptr_restrict = 2 in /etc/sysctl.d/10-kernel-hardening.conf
 # install node
+
+sudo add-apt-repository ppa:fossfreedom/byzanz
+sudo apt-get update && sudo apt-get install byzanz
 
 #echo "show hidden start up application in startup applications app, remove unnecessary ones there"
 #sudo sed -i 's/NoDisplay=true/NoDisplay=false/g' /etc/xdg/autostart/*.desktop
@@ -50,6 +49,16 @@ sudo apt-get update
 
 sudo apt-get install tiptop gimp htop traceroute apache2 virtualbox clamav php5-cli shellcheck maven npm openvpn gimp htop mysql-server openvpn oracle-java8-installer fail2ban ttf-liberation nmap iftop dos2unix vagrant git eclipse meld sublime-text-installer google-chrome-stable ntp ntpdate lm-sensors psensor unace unrar zip unzip p7zip-full p7zip-rar sharutils rar uudeview mpack arj cabextract file-roller parallel expect ruby ruby-dev compizconfig-settings-manager libxml2-utils iftop htop openssh-server -y
 
+
+## https://askubuntu.com/questions/4428/how-to-record-my-screen  
+sudo add-apt-repository ppa:fossfreedom/byzanz
+sudo apt-get update && sudo apt-get install byzanz
+
+# install diff-so-fancy  - https://github.com/so-fancy/diff-so-fancy
+sudo npm install -g diff-so-fancy
+
+
+# TODO
 sudo gem install travis -v 1.8.2 --no-rdoc --no-ri
 
 echo "on the next window, disable passwordles login, hit enter to continue"
