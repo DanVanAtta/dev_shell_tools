@@ -16,3 +16,7 @@ https://davidwalsh.name/update-git-commit-messages
 
 
 
+JVM flag for looking at CPU cache metrics
+https://shipilev.net/jvm-anatomy-park/11-moving-gc-locality/
+The cause for performance difference is very simple, and visible with -prof perfnorm (we also use -opi 1048576 to divide by number of elements):
+
