@@ -30,3 +30,25 @@ Settings
    - record file and application usage > off
  - Search
    - include online search results > off
+
+---------------------------------------
+Prepending to Commit Messages
+To prepend text to every commit message in a given range, you'd execute a message like:
+
+git filter-branch --msg-filter 'echo "bug ###### - \c" && cat' master..HEAD
+
+https://davidwalsh.name/update-git-commit-messages
+
+---------------------------------------
+
+
+
+## duplicated lines of java code
+ find . -name "*.java" | xargs cat | grep -v "import" | egrep -v "^\s*[{}]\s*$" | sed '/^\s*$/d' | grep -v "@" | sort | uniq -c | sort -nr | head -200 | less
+
+
+
+JVM flag for looking at CPU cache metrics
+https://shipilev.net/jvm-anatomy-park/11-moving-gc-locality/
+The cause for performance difference is very simple, and visible with -prof perfnorm (we also use -opi 1048576 to divide by number of elements):
+

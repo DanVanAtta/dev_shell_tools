@@ -1,6 +1,0 @@
-#!/bin/bash
-
-## Small script to show the current branch
-## gbc = git branch "current"
-
-git branch | grep "^\*"

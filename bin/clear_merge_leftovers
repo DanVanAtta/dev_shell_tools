@@ -1,7 +1,0 @@
-#!/bin/bash
-
-## Sometimes after resolving a merge conflict there will be
-## extra files left over. This script will remove those files.
-
-find . -name "*.orig" -type f | xargs --no-run-if-empty rm 
-find . -type f | egrep "java\.(BACKUP|BASE|LOCAL|REMOTE)\.[0-9]*.java$" | xargs --no-run-if-empty rm
