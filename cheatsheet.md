@@ -16,6 +16,9 @@ function tunnel() {
 ### Linux Screen Recording
 
 ```
+sudo apt-get install -y gifsicle gtk-recordmydesktop
+
+
 gtk-recordmydesktop
 
 ffmpeg -i out.ogv \
@@ -28,4 +31,10 @@ ffmpeg -i output.mp4 -ss 00:00:07 -t 00:00:11 cut.mp4
 
 # shorten down, keep seconds 7 through 10
 ffmpeg -i output.mp4 -ss 00:00:07 -t 00:00:10 cut.mp4
+
+# convert to git
+ffmpeg -i cut.mp4 -r 10 -f image2pipe -vcodec ppm - | convert -delay 5 -loop 1 - output.gif
+
+## do some comrpession
+gifsicle -O3 --colors 128 < output.gif > final.gif
 ```
