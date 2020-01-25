@@ -1,0 +1,14 @@
+#!/bin/bash
+
+## Sorts a file in place, overwrites paramter file with
+## sorted contents of that same file.
+
+set -e
+file="$1"
+
+temp="$(mktemp)"
+
+trap 'rm -f "$temp"' EXIT
+sort "$file" > "$temp"
+mv "$temp" "$file"
+
