@@ -1,0 +1,36 @@
+#!/bin/bash
+
+
+src_files=$(mktemp)
+find . -path "*/src/main/java/*" -type f -name "*.java" > $src_files
+test_files=$(mktemp)
+find . -path "*/src/test/java/*" -type f -name "*Test.java" > $test_files
+
+
+function makeTestDirectory() {
+  local source_file="$1"
+  
+
+}
+
+cat "$test_files" | while read file; do
+  fileName=$(echo $file | sed 's|.*/||' | sed 's/Test.java$/.java/')
+  
+  src_file=$(grep "/$fileName" "$src_files")
+
+  if [ ! -z "$src_file" ]; then
+    src_package=$(echo $src_file | sed 's|.*src/main/java/||' | sed 's|/[A-Z].*.java||')
+    test_package=$(echo $file | sed 's|.*src/test/java/||' | sed 's|/[A-Z].*.java||')
+
+    if [ "$src_package" != "$test_package" ]; then
+      new_test_file=$(echo "$src_file" | sed 's|src/main/java|src/test/java|' | sed 's|.java$|Test.java|')
+      new_test_dir=$(echo "$new_test_file" | sed 's|/[A-Z].*java$||')
+      
+      java_package_name=$(echo "$src_package" | sed 's|/|.|g')
+      sed -i "s|^package.*|package $java_package_name;|" "$file"
+      mkdir -pv "$new_test_dir"
+      mv -v "$file" "$new_test_file"
+    fi
+  fi
+done
+
